@@ -1,8 +1,10 @@
 package com.bitcode.firstapplicationdemo;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,58 +26,64 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         LinearLayout mainContainer = new LinearLayout(this);
+        mainContainer.setPadding(20,20,20,20);
         mainContainer.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
+        mainContainer.setOrientation(LinearLayout.VERTICAL);
 
-        LinearLayout.LayoutParams linearLayoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT
+        ViewGroup.LayoutParams linearLayoutParams = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
         );
 
         mainContainer.setLayoutParams(linearLayoutParams);
 
-        LinearLayout.LayoutParams layoutParamsForViews = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+        ViewGroup.LayoutParams layoutParamsForViews = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
         );
 
         TextView welcomeMessageTextView = new TextView(this);
-        welcomeMessageTextView.setText("Welcome To Bitcode For Android!");
-        welcomeMessageTextView.setBackgroundColor(R.color.white);
-        welcomeMessageTextView.setTextColor(R.color.black);
+        welcomeMessageTextView.setText(R.string.welcome_message);
+        welcomeMessageTextView.setBackgroundColor(Color.CYAN);
+        welcomeMessageTextView.setTextColor(Color.BLACK);
         welcomeMessageTextView.setTextSize(20.0F);
-
+        welcomeMessageTextView.setPadding(20,20,20,20);
         welcomeMessageTextView.setLayoutParams(layoutParamsForViews);
 
         mainContainer.addView(welcomeMessageTextView);
 
         EditText usernameEditText = new EditText(this);
-        usernameEditText.setTextSize(20.0F);
+        usernameEditText.setTextSize(30.0F);
         usernameEditText.setHint("Enter your username");
-        usernameEditText.setBackgroundColor(R.color.white);
-        usernameEditText.setTextColor(R.color.black);
-
+        usernameEditText.setBackgroundColor(Color.GRAY);
+        usernameEditText.setTextColor(Color.BLACK);
+        usernameEditText.setPadding(20,20,20,20);
         usernameEditText.setLayoutParams(layoutParamsForViews);
+
         mainContainer.addView(usernameEditText);
 
         EditText passwordEditText = new EditText(this);
-        passwordEditText.setTextColor(R.color.black);
-        passwordEditText.setBackgroundColor(R.color.white);
-        passwordEditText.setTextSize(20.0F);
+        passwordEditText.setHint("Enter your password");
+        passwordEditText.setTextColor(Color.BLACK);
+        passwordEditText.setBackgroundColor(Color.GREEN);
+        passwordEditText.setTextSize(30.0F);
+        passwordEditText.setPadding(20,20,20,20);
         passwordEditText.setLayoutParams(layoutParamsForViews);
 
         mainContainer.addView(passwordEditText);
 
         Button btnLogin = new Button(this);
         btnLogin.setTextSize(20.0F);
-        btnLogin.setText("Login");
-        btnLogin.setBackgroundColor(R.color.white);
-        btnLogin.setTextColor(R.color.black);
+        btnLogin.setText(R.string.login);
+        btnLogin.setBackgroundColor(Color.GRAY);
+        btnLogin.setTextColor(Color.BLACK);
+        btnLogin.setPadding(20,20,20,20);
         btnLogin.setLayoutParams(layoutParamsForViews);
 
         mainContainer.addView(btnLogin);
 
         setContentView(mainContainer);
-        Toast.makeText(this, "onCreate Method is Called", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "onCreate Method is Called", Toast.LENGTH_LONG).show();
     }
 
     @Override

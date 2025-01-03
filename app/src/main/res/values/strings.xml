@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FirstApplicationDemo</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="welcome_message">Welcome To Bitcode For Android!</string>
+
+    <string-array name="names">
+        <item>Kaustubh</item>
+        <item>Sandip</item>
+        <item>Swapnil</item>
+        <item>Sakshi</item>
+        <item>Nidhi</item>
+    </string-array>
 </resources>
