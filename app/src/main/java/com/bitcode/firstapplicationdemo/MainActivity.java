@@ -20,12 +20,17 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    LinearLayout mainContainer;
+    TextView welcomeMessageTextView;
+    EditText usernameEditText,passwordEditText;
+    Button btnLogin;
+
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        LinearLayout mainContainer = new LinearLayout(this);
+        mainContainer = new LinearLayout(this);
         mainContainer.setPadding(20,20,20,20);
         mainContainer.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL);
         mainContainer.setOrientation(LinearLayout.VERTICAL);
@@ -42,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.WRAP_CONTENT
         );
 
-        TextView welcomeMessageTextView = new TextView(this);
+        welcomeMessageTextView = new TextView(this);
         welcomeMessageTextView.setText(R.string.welcome_message);
         welcomeMessageTextView.setBackgroundColor(Color.CYAN);
         welcomeMessageTextView.setTextColor(Color.BLACK);
@@ -52,27 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
         mainContainer.addView(welcomeMessageTextView);
 
-        EditText usernameEditText = new EditText(this);
-        usernameEditText.setTextSize(30.0F);
+        usernameEditText = new EditText(this);
         usernameEditText.setHint("Enter your username");
-        usernameEditText.setBackgroundColor(Color.GRAY);
-        usernameEditText.setTextColor(Color.BLACK);
-        usernameEditText.setPadding(20,20,20,20);
         usernameEditText.setLayoutParams(layoutParamsForViews);
 
         mainContainer.addView(usernameEditText);
 
-        EditText passwordEditText = new EditText(this);
+        passwordEditText = new EditText(this);
         passwordEditText.setHint("Enter your password");
-        passwordEditText.setTextColor(Color.BLACK);
-        passwordEditText.setBackgroundColor(Color.GREEN);
-        passwordEditText.setTextSize(30.0F);
-        passwordEditText.setPadding(20,20,20,20);
         passwordEditText.setLayoutParams(layoutParamsForViews);
 
         mainContainer.addView(passwordEditText);
 
-        Button btnLogin = new Button(this);
+        btnLogin = new Button(this);
         btnLogin.setTextSize(20.0F);
         btnLogin.setText(R.string.login);
         btnLogin.setBackgroundColor(Color.GRAY);
@@ -80,10 +77,27 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setPadding(20,20,20,20);
         btnLogin.setLayoutParams(layoutParamsForViews);
 
+        //pass the object of such a class that implements interface
+        btnLogin.setOnClickListener(new MyBtnLoginClickListener());
+
         mainContainer.addView(btnLogin);
 
         setContentView(mainContainer);
-//        Toast.makeText(this, "onCreate Method is Called", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "onCreate Method is Called", Toast.LENGTH_LONG).show();
+    }
+
+    //way 1 - of attaching listeners
+    class MyBtnLoginClickListener implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            if (view == btnLogin){
+                if((usernameEditText.getText().toString().equals("Bitcode"))
+                        && (passwordEditText.getText().toString().equals("Bitcode@1234"))){
+                    Toast.makeText(MainActivity.this,"Login Success",Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 
     @Override
