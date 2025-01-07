@@ -3,6 +3,7 @@
     <string name="login">Login</string>
     <string name="username">Username</string>
     <string name="welcome_message">Welcome To Bitcode For Android!</string>
+    <string name="welcome_to_bitcode">Welcome To Bitcode!</string>
 
     <string-array name="names">
         <item>Kaustubh</item>
