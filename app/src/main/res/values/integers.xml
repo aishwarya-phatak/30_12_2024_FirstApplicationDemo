@@ -4,11 +4,22 @@
     <integer name="two">2</integer>
     <integer name="fourteen">14</integer>
 
+    <integer name="ten">10</integer>
+    <integer name="twelve">12</integer>
+
     <integer-array name="numbers">
         <item>12</item>
         <item>13</item>
         <item>14</item>
         <item>15</item>
         <item>16</item>
+    </integer-array>
+
+    <integer-array name="roll_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </integer-array>
 </resources>

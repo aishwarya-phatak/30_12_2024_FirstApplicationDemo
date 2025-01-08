@@ -9,11 +9,9 @@
 
     <TextView
         android:id="@+id/welcomeTextView"
+        style="@style/my_custom_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:background="@color/light_blue"
         android:padding="20dp"
         android:text="@string/welcome_to_bitcode"
@@ -21,29 +19,23 @@
 
     <EditText
         android:id="@+id/edtUsername"
+        style="@style/my_custom_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:hint="Enter Username" />
 
     <EditText
         android:id="@+id/edtPassword"
+        style="@style/my_custom_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:hint="Enter Password" />
 
     <Button
         android:id="@+id/btnLogin"
+        style="@style/my_custom_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
         android:background="@color/light_blue"
         android:text="Login"
         android:textSize="20sp" />

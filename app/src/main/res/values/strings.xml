@@ -5,11 +5,22 @@
     <string name="welcome_message">Welcome To Bitcode For Android!</string>
     <string name="welcome_to_bitcode">Welcome To Bitcode!</string>
 
+    <string name="student_name">Yash</string>
+    <string name="welcome">Welcome!</string>
+
     <string-array name="names">
         <item>Kaustubh</item>
         <item>Sandip</item>
         <item>Swapnil</item>
         <item>Sakshi</item>
         <item>Nidhi</item>
+    </string-array>
+
+    <string-array name="colours">
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Gray</item>
+        <item>Blue</item>
+        <item>Magenta</item>
     </string-array>
 </resources>
